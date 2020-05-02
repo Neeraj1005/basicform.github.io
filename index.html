@@ -257,6 +257,7 @@
                           class="form-control select2"
                           style="width: 100%;"
                         >
+                          <option value="0"></option>
                           <option>Intersted</option>
                           <option>Left message</option>
                           <option>No response</option>
@@ -334,9 +335,10 @@
                         <label>Owner</label>
                         <select
                           class="form-control select2"
-                          data-placeholder="Select a owner"
+                          data-placeholder="Select Owner"
                           style="width: 100%;"
                         >
+                          <option value="0"></option>
                           <option>Logged User</option>
                           <option>Other User</option>
                         </select>
@@ -346,9 +348,10 @@
                         <label>Related to</label>
                         <select
                           class="form-control select2"
-                          data-placeholder="Select a owner"
+                          data-placeholder="Select Related to"
                           style="width: 100%;"
                         >
+                          <option value="0"></option>
                           <option>LeadListName</option>
                           <option>ContactName</option>
                           <option>AccountName</option>
@@ -360,10 +363,11 @@
                         <label>Collaborator</label>
                         <select
                           class="form-control select2 select2-purple"
-                          data-placeholder="see"
+                          data-placeholder="Add Collaborator if"
                           data-dropdown-css-class="select2-purple"
                           style="width: 100%;"
                         >
+                          <option value="0"></option>
                           <option>Alabama</option>
                           <option>Not Fixed?</option>
                         </select>
@@ -423,11 +427,13 @@
     <script>
       $(function () {
         //Initialize Select2 Elements
-        $(".select2").select2();
-
-        //Initialize Select2 Elements
-        $(".select2bs4").select2({
-          theme: "bootstrap4",
+        $(".select2").select2({
+          allowClear: true,
+          placeholder: {
+            id: '0', // the value of the option
+            text: 'Select an option'
+          },
+          maximumInputLength: 2,
         });
 
         //Date range picker changed into single datepicker using singleDatePicker: true, do false if range needed
